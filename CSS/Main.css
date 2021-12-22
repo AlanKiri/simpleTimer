@@ -1,0 +1,6 @@
+/* Centering objects in container */
+.container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+};
