@@ -1,6 +1,23 @@
-/* Centering objects in container */
 .container {
+}
+
+/* Centering div elements (horizontally and vertically) */
+.align {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+.align-horizontaly {
+    display: block;
     text-align: center;
-    display: flex;
-    justify-content: center;
-};
+}
+
+
+/* Assigning font size to timer div */
+#timerClock {
+    font-size: 150px;
+}
