@@ -81,32 +81,54 @@ function calculateTime (inputString)
 
 };
 
-function initTimer () {
-         if(currentTask== "active"){
-        var myfunc = setInterval(function() {
+function secondsToString (timeLeft){
+        let d = Math.floor(timeLeft / (3600*24));
+        let h = Math.floor(timeLeft % (3600*24) / 3600);
+        let m = Math.floor(timeLeft % 3600 / 60);
+        let s = Math.floor(timeLeft % 60);    
+        return (`Days: ${d}, Hours: ${h}, Minutes: ${m}, Seconds: ${s}.`)
 
-                let timeLeft = calculatedTime - 1;
-                document.getElementById("timerClock").innerHTML = $` `
 
-        
+};
 
-        }, 1000);
-         }
+function timer(ms) { return new Promise(res => setTimeout(res, ms)); }
+
+async function initTimer (calculatedTime) {
+        if(currentTask=="active"){
+
+                async function printToInner (value){
+                        await timer(1000);
+                        document.getElementById("timerClock").innerHTML = secondsToString(value);
+                };
+
+                
+                for( let i = calculatedTime; i>0 ;i--){
+                        if (i==0 || currentTask==null)
+                        {
+                                document.getElementById("timerClock").innerHTML = '';
+                                break;
+                        };
+               
+                        test(i);
+                        await printToInner (i);
+                        
+                };
+
+
+}
         
 };
 
 
 newTimerButton.onclick  = function() {
-        calculateTime(document.getElementById("timeInput").value);
-        initTimer();
         currentTask="active";
-        stateCheck();    
+        stateCheck();     
+        calculateTime(document.getElementById("timeInput").value);
+        initTimer(calculatedTime);
 };
 stopTimerButton.onclick  = function() {
-
-
-
         currentTask=null;
+        document.getElementById("timerClock").innerHTML = '';
         stateCheck(); 
 };
 testTimerButton.onclick  = function() {

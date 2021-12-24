@@ -19,7 +19,7 @@
 
 /* Assigning font size to timer div */
 #timerClock {
-    font-size: 150px;
+    font-size: 50px;
     max-width: 1500px;
     word-wrap: break-word;
 }
