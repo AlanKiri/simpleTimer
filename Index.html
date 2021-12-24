@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <head>
+<html>
 
 <title>Simple timer</title>
 <link rel="stylesheet" href="CSS/Main.css">
@@ -9,17 +10,22 @@
 
 <div class="container">
     
-    <div class="align-horizontaly" id="timerControlButtons">
+        <div class="align-horizontaly" id="timerControls">
         <button id="newTimerButton">New</button>
-        <button id="editTimerButton">Edit</button>
-        <button id="stopTimerButton">Stop</button>
-        
+        <button id="stopTimerButton">Stop</button> 
+        <button id="testTimerButton">Test</button>
+        <br>
+        <input type="text" id="timeInput" value = "10 min"></input>   
+        <br>
+        <p style="font-size: 20px;" id="hintText"></p>
     </div>
 
     <div id="timerClock" class="align">
-        100:00
+        
     </div>
 </div>
     
+<script src="JS/Main.js"></script>
 
+</html>
 </body>

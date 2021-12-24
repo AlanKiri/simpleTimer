@@ -1,4 +1,5 @@
 .container {
+
 }
 
 /* Centering div elements (horizontally and vertically) */
@@ -9,15 +10,19 @@
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-  }
+}
 
 .align-horizontaly {
     display: block;
     text-align: center;
 }
 
-
 /* Assigning font size to timer div */
 #timerClock {
     font-size: 150px;
+    max-width: 1500px;
+    word-wrap: break-word;
+}
+#timeInput {
+    margin-top: 10px;
 }
